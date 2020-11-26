@@ -1,5 +1,6 @@
 <%# ERB %>
-<% content_for(:html_title) { @product.name }%>
-
-<%= render partial: 'product', object: @product, locals: { show_link: false }%>
-<h2  class="title is-6 has-text-danger" ><%= link_to '👈 Back to list prooducts', product_path%></h2>
+<div class="columns">
+  <%= render partial: 'product',
+             object: @product,
+             locals: { show_link: false } %>
+</div>

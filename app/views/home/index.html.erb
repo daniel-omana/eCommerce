@@ -1,2 +1,6 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h2  class="title is-2">Products</h2>
+
+<%= render partial: 'products/product', collection: @products, locals: { show_link: true } %>
+
+<hr class="mt-6">
+<%= paginate @products %>

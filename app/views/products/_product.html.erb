@@ -1,40 +1,28 @@
-<h2 class="title is-2">
-  <% if show_link %>
-    <%= link_to product.name, product %>
-  <% else %>
-    <%= product.name %>
-  <% end %>
-</h2>
+<div class="column">
+  <div class="card">
+    <% if product.image.present? %>
+      <%= image_tag product.image %>
+    <%end%>
+    <div class="card-content">
+      <p class="title">
+        <% if show_link %>
+          <%= link_to product.name, product %>
+        <% else %>
+          <%= product.name %>
+        <% end %>
+      </p>
+      <p><strong>Manufacturer: </strong><%= link_to product.manufacturer.name, product.manufacturer %></p>
+      <p><strong>Category: </strong><%= link_to product.category.name, product.category %></p>
+      <p><strong>Description: </strong><%= product.description %></p>
+    </div>
+    <footer class="card-footer">
 
-<p>
-  <strong>Name: </strong>
-  <%= product.name %>
-</p>
-
-<p>
-  <strong>Description: </strong>
-  <%= product.description %>
-</p>
-
-<p>
-  <strong>Price: </strong>
-  <%= product.retail_price %>
-</p>
-
-<p>
-  <strong>Quantity: </strong>
-  <%= product.quantity %>
-</p>
-
-<p>
-  <strong>Manufacturer: </strong>
-  <%= link_to product.manufacturer.name, product.manufacturer %>
-</p>
-
-<p>
-  <strong>Category: </strong>
-  <%= link_to product.category.name, product.category %>
-</p>
-
-
-<hr>
+      <p class="card-footer-item">
+        <strong>Retail Price: </strong><%= product.retail_price %>
+      </p>
+      <p class="card-footer-item">
+        <strong>Quantity:</strong><%= product.quantity %>
+      </p>
+    </footer>
+  </div>
+</div>
