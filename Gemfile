@@ -52,3 +52,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# ActiveAdmin - admin dashboard asa  Rails Engine
+gem 'activeadmin'
+
+# Authentication gem - Username and Password authentication Library
+gem 'devise'
+
+#Faker gemfile
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+#Kimanari gemfile
+gem 'kaminari'
+
+# Stripe gemfile
+gem 'stripe'
