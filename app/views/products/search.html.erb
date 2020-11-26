@@ -1,4 +1,8 @@
-<p class="mb-5">Books found when searching for: <%= params[:keyword] %></p>
+<% if params[:keywword].blank? && params[:category].present?%>
+  <p class="mb-5">Searching All products</p>
+<% else %>
+  <p class="mb-5">Books found when searching for: <%= params[:keyword] %></p>
+<% end %>
 
 <ul>
   <% @products.each do |product| %>

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :manufacturers, only: %i[index show]
 
+  get 'serach', to: 'menu#search'
   root 'home#index'
 end
