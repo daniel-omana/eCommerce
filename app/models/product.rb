@@ -8,4 +8,6 @@ class Product < ApplicationRecord
   validates :retail_price, numericality: true
 
   has_one_attached :image
+
+  paginates_per 10
 end
