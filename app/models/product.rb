@@ -6,4 +6,6 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
   validates :quantity, numericality: { only_integer: true }
   validates :retail_price, numericality: true
+
+  has_one_attached :image
 end
