@@ -1,0 +1,7 @@
+<p class="mb-5">Books found when searching for: <%= params[:keyword] %></p>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.name, product %></li>
+  <% end %>
+</ul>

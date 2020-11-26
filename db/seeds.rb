@@ -8,9 +8,9 @@
   category = Category.find(rand(1..4))
   manufacturer = Manufacturer.find(rand(1..6))
   product = category.products.create(name: Faker::Commerce.unique.product_name,
-                                     description: "Color: #{Faker::Commerce.color}\n" +
-                              "This product is made out of #{Faker::Commerce.material}\n" +
-                              "Designed by: #{Faker::Artist.name}",
+                                     description: "Color is #{Faker::Commerce.color} and " +
+                                                  "this product is made out of #{Faker::Commerce.material}. " +
+                                                  "Designed by: #{Faker::Artist.name}",
                                      retail_price: Faker::Number.decimal(l_digits: 2),
                                      quantity: Faker::Number.number(digits: 2),
                                      manufacturer_id: manufacturer.id)

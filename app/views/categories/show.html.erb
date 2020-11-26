@@ -1,2 +1,20 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<% content_for(:html_title) { @category.name }%>
+
+<h2  class="title is-2"><%= @category.name %></h2>
+<h2  class="title is-6 has-text-danger" ><%= link_to '👈 Back to list of Categories', categories_path%></h2>
+
+<p>
+  There are <%= @category.products.count %> products in <%= @category.name %>
+</p>
+
+<h3 class="title is-3 mt-5"><%= @category.name %> products</h3>
+
+<div class="content">
+  <ul class="mt-5">
+    <% @category.products.each do |category|%>
+      <li>
+        <%= link_to category.name, category %>
+      </li>
+    <%end%>
+  </ul>
+</div>

@@ -13,15 +13,15 @@
       </p>
       <p><strong>Manufacturer: </strong><%= link_to product.manufacturer.name, product.manufacturer %></p>
       <p><strong>Category: </strong><%= link_to product.category.name, product.category %></p>
-      <p><strong>Description: </strong><%= product.description %></p>
+      <p><strong>Description: </strong><br><%= product.description %></p>
     </div>
     <footer class="card-footer">
 
       <p class="card-footer-item">
-        <strong>Retail Price: </strong><%= product.retail_price %>
+        Retail Price<br>  <%= number_to_currency product.retail_price %>
       </p>
       <p class="card-footer-item">
-        <strong>Quantity:</strong><%= product.quantity %>
+        Quantity<br><%= product.quantity %>
       </p>
     </footer>
   </div>
