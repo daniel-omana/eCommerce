@@ -10,7 +10,5 @@ Rails.application.routes.draw do
   end
   resources :manufacturers, only: %i[index show]
 
-  resource :searches
-
   root 'home#index'
 end
