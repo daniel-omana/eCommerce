@@ -5,4 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+if Rails.env.development?
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+end
+
+# NUMBER_OF_PRODUCTS_TO_CREATE = 90
+
+# NUMBER_OF_PRODUCTS_TO_CREATE.times do
+#   category = Category.find(rand(1..4))
+#   manufacturer = Manufacturer.find(rand(1..6))
+#   category.products.create(name: Faker::Commerce.unique.product_name,
+#                            description: "Color: #{Faker::Commerce.color}\n" +
+#                               "This product is made out of #{Faker::Commerce.material}\n" +
+#                               "Designed by: #{Faker::Artist.name}",
+#                            retail_price: Faker::Number.decimal(l_digits: 2),
+#                            quantity: Faker::Number.number(digits: 2),
+#                            manufacturer_id: manufacturer.id)
+# end
