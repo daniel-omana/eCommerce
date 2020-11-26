@@ -67,3 +67,6 @@ gem 'kaminari'
 
 # Stripe gemfile
 gem 'stripe'
+
+# image processing gem
+gem 'image_processing'

@@ -1,2 +1,20 @@
-<h1>Manufacturers#show</h1>
-<p>Find me in app/views/manufacturers/show.html.erb</p>
+<% content_for(:html_title) { @manufacturer.name }%>
+
+<h2  class="title is-2"><%= @manufacturer.name %></h2>
+<h2  class="title is-6 has-text-danger" ><%= link_to '👈 Back to list of Manufacturers', manufacturer_path%></h2>
+
+<p>
+  This manufacturer has made <%= @manufacturer.products.count %>
+</p>
+
+<h3 class="title is-3 mt-5">Prodducts made by <%= @manufacturer.name %> </h3>
+
+<div class="content">
+  <ul class="mt-5">
+    <% @manufacturer.products.each do |product|%>
+      <li>
+        <%= link_to product.name, product %>
+      </li>
+    <%end%>
+  </ul>
+</div>
