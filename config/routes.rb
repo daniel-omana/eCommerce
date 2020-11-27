@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :pages
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :categories, only: %i[index show]
@@ -18,6 +17,9 @@ Rails.application.routes.draw do
       get 'display'
     end
   end
+
+  resources :pages, except: [:show]
+  get '/pages/:permalink' => 'pages#permalink', as: :permalink
 
   root 'home#index'
 end
