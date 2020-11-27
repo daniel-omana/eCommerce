@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'command/sale'
+  get 'command/new'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :categories, only: %i[index show]
@@ -10,6 +12,5 @@ Rails.application.routes.draw do
   end
   resources :manufacturers, only: %i[index show]
 
-  get 'serach', to: 'menu#search'
   root 'home#index'
 end

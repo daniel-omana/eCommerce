@@ -2,5 +2,7 @@
 
 <%= render partial: 'products/product', collection: @products, locals: { show_link: true } %>
 
+<%= @sales %>
+
 <hr class="mt-6">
 <%= paginate @products %>
