@@ -1,0 +1,24 @@
+<h2>Current Cart</h2>
+
+<table>
+  <thead>
+    <tr>
+      <td>Product</td>
+      <td>Price</td>
+      <td>Remove</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% cart.each do |product|%>
+      <tr>
+        <td><%= product.name %></td>
+        <% if product.sale_price?%>
+          <td><%= product.sale_price %></td>
+        <% else %>
+          <td><%= product.retail_price %></td>
+        <% end %>
+        <td><%= link_to '❌', cart_path(product), method: :delete %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

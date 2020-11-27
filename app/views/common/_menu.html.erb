@@ -19,6 +19,9 @@
         </div>
       </div>
       <h3 class="navbar-item"><%= link_to 'Sale!', sale_products_path , class: "has-text-danger has-text-weight-bold"%></h3>
+      <% if cart.present? %>
+        <h3 class="navbar-item"><%= link_to 'Cart', display_cart_index_path , class: "has-text-danger has-text-weight-bold"%></h3>
+      <%end%>
     </div>
 
     <%# TEST %>
