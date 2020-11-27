@@ -7,6 +7,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def sale
+    @sale_products = Product.where.not(sale_price: nil).page params[:page]
+  end
+
+  def new_arivals
+    @new_products = Product.where('created_at >= ?', 3.days.ago).page params[:page]
+  end
+
   def search
     wildcard_search = "%#{params[:keyword]}%"
 

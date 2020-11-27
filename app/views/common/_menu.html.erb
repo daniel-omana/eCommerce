@@ -1,27 +1,33 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <h3 class="navbar-item"><%= link_to 'Home', root_path%></h3>
+    <h3 class="navbar-item"><%= link_to 'Home', root_path , class: "has-text-black has-text-weight-bold"%></h3>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
+      <div class="navbar-item"><%= link_to 'New Arrivals!', new_arivals_products_path , class: "has-text-black has-text-weight-bold"%></div>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
+        <a class="navbar-link has-text-black has-text-weight-bold">
           More
         </a>
 
         <div class="navbar-dropdown">
-          <h3 class="navbar-item"><%= link_to 'Manufacturers', manufacturers_path%></h3>
+          <h3 class="navbar-item"><%= link_to 'Designers', manufacturers_path%></h3>
           <h3 class="navbar-item"><%= link_to 'Categories', categories_path%></h3>
           <hr class="navbar-divider">
           <h3 class="navbar-item"><%= link_to 'Products', products_path%></h3>
         </div>
       </div>
+      <h3 class="navbar-item"><%= link_to 'Sale!', sale_products_path , class: "has-text-danger has-text-weight-bold"%></h3>
     </div>
 
     <%# TEST %>
     <div class="navbar-end">
       <div class="navbar-item">
+      <div class="navbar-brand">
+
+      </div>
+
         <div class="buttons">
           <%= form_with(url: search_products_path, method: :get, local: true) do %>
             <div class="field is-grouped mb-5">

@@ -1,0 +1,6 @@
+<h2  class="title is-2">Sale Items</h2>
+
+<%= render partial: 'product', collection: @sale_products, locals: { show_link: true } %>
+
+<hr class="mt-6">
+<%= paginate @sale_products %>

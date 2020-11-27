@@ -16,10 +16,16 @@
       <p><strong>Description: </strong><br><%= product.description %></p>
     </div>
     <footer class="card-footer">
+      <% if product.sale_price? %>
+        <p class="card-footer-item" >
+          <strong class="has-text-danger">Sale Price<br>  <%= number_to_currency product.sale_price %></strong>
+        </p>
+      <% else %>
+        <p class="card-footer-item">
+          Retail Price<br>  <%= number_to_currency product.retail_price %>
+        </p>
+      <% end %>
 
-      <p class="card-footer-item">
-        Retail Price<br>  <%= number_to_currency product.retail_price %>
-      </p>
       <p class="card-footer-item">
         Quantity<br><%= product.quantity %>
       </p>
