@@ -10,6 +10,7 @@
         <% else %>
           <%= product.name %>
         <% end %>
+
       </p>
       <p><strong>Manufacturer: </strong><%= link_to product.manufacturer.name, product.manufacturer %></p>
       <p><strong>Category: </strong><%= link_to product.category.name, product.category %></p>
@@ -28,6 +29,16 @@
 
       <p class="card-footer-item">
         Quantity<br><%= product.quantity %>
+      </p>
+    </footer>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        <%# TEST %>
+        <%= form_tag order_items_path do %>
+          <%= hidden_field_tag :product_id, product.id%>
+          <%= number_field_tag :quantity, 1%>
+          <%= submit_tag "Add to Cart" %>
+        <% end %>
       </p>
     </footer>
   </div>
