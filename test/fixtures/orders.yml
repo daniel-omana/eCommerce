@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fulfilled: false
+  total: 9.99
+  subtotal: 9.99
+  gst: 9.99
+  pst: 9.99
+
+two:
+  fulfilled: false
+  total: 9.99
+  subtotal: 9.99
+  gst: 9.99
+  pst: 9.99
